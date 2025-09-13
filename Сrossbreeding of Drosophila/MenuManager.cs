@@ -166,6 +166,7 @@ namespace Сrossbreeding_of_Drosophila
             Console.Write("   Приклад: Bb, BB, bb  ");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("(або -1 для повернення)");
+            Console.ResetColor();
 
             string? wing = Console.ReadLine();
             if (wing == "-1") return;
