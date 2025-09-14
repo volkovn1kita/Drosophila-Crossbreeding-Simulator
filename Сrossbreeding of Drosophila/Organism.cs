@@ -33,7 +33,6 @@ namespace Сrossbreeding_of_Drosophila
         }
 
 
-
         public List<string> ProduceGametes()
         {
             if (Genes.Count == 0) return new List<string>();

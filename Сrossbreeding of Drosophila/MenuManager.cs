@@ -210,12 +210,22 @@ namespace Сrossbreeding_of_Drosophila
             Console.WriteLine($" Всього особин: {population.Count}");
             Console.WriteLine();
 
+            // ==== 1. Знаходимо максимальну ширину генотипу та фенотипу ====
+            int maxGenotypeWidth = Math.Max("ГЕНОТИП".Length, population.Max(o => o.GetGenotype().Length));
+            int maxPhenotypeWidth = Math.Max("ФЕНОТИП".Length, population.Max(o => o.GetPhenotype().Length));
+
+            // ==== 2. Формуємо верхню рамку динамічно ====
+            string topBorder = "┌─────┬" + new string('─', maxGenotypeWidth + 2) + "┬" + new string('─', maxPhenotypeWidth + 2) + "┐";
+            string midBorder = "├─────┼" + new string('─', maxGenotypeWidth + 2) + "┼" + new string('─', maxPhenotypeWidth + 2) + "┤";
+            string bottomBorder = "└─────┴" + new string('─', maxGenotypeWidth + 2) + "┴" + new string('─', maxPhenotypeWidth + 2) + "┘";
+
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("┌─────┬─────────────────┬──────────────────────────────────┐");
-            Console.WriteLine("│ №   │    ГЕНОТИП      │               ФЕНОТИП            │");
-            Console.WriteLine("├─────┼─────────────────┼──────────────────────────────────┤");
+            Console.WriteLine(topBorder);
+            Console.WriteLine($"│ {"№",-3} │ {"ГЕНОТИП".PadRight(maxGenotypeWidth)} │ {"ФЕНОТИП".PadRight(maxPhenotypeWidth)} │");
+            Console.WriteLine(midBorder);
             Console.ResetColor();
 
+            // ==== 3. Вивід усіх особин ====
             for (int i = 0; i < population.Count; i++)
             {
                 var org = population[i];
@@ -225,19 +235,20 @@ namespace Сrossbreeding_of_Drosophila
                 Console.ResetColor();
                 Console.Write(" │ ");
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write($"{org.GetGenotype(),-15}");
+                Console.Write(org.GetGenotype().PadRight(maxGenotypeWidth));
                 Console.ResetColor();
                 Console.Write(" │ ");
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Write($"{org.GetPhenotype(),-31}");
+                Console.Write(org.GetPhenotype().PadRight(maxPhenotypeWidth));
                 Console.ResetColor();
                 Console.WriteLine(" │");
             }
 
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("└─────┴─────────────────┴──────────────────────────────────┘");
+            Console.WriteLine(bottomBorder);
             Console.ResetColor();
         }
+
 
         private void CrossParents()
         {

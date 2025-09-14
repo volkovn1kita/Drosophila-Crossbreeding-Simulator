@@ -30,10 +30,12 @@ namespace Сrossbreeding_of_Drosophila
         {
             // Якщо хоч один домінантний -> домінантна ознака
             if (Allele1.IsDominant || Allele2.IsDominant)
-                return "Dominant Trait";
+                return string.Join(":" , Type.Name ,Type.DominantPhenotype);
             else
-                return "Recessive Trait";
+                return string.Join(":", Type.Name, Type.RecessivePhenotype);
         }
+
+
 
     }
 }
