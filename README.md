@@ -53,7 +53,8 @@
 <br><br>
 
 ### 👥 Перегляд популяції
-<img width="600" alt="Таблиця з популяцією" src="https://github.com/user-attachments/assets/d7dfa5a3-f3a4-4f75-8a63-91689f55a291" />
+<img width="535" height="281" alt="image" src="https://github.com/user-attachments/assets/30a04cc0-ecf9-43d6-8678-bfb3bfd12a5a" />
+
 
 *Елегантна таблиця з генотипами та фенотипами особин*
 
@@ -67,7 +68,8 @@
 <br><br>
 
 ### 🗑️ Видалення особини
-<img width="600" alt="Меню видалення особини" src="https://github.com/user-attachments/assets/e6783cec-f357-4ae9-aee8-2e9fb033c150" />
+<img width="563" height="241" alt="image" src="https://github.com/user-attachments/assets/255aea08-d7a7-4f6c-bc72-d0aa4c4cf47f" />
+
 
 *Безпечне видалення особин з популяції*
 
